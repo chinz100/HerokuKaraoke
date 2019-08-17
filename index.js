@@ -23,7 +23,8 @@ app.get('/api', (request, response) => {
     response.json(data);
   });
 });
-
+var karaoke = require('./karaoke')
+app.use('/newuser', karaoke.thai2karaoke());
 app.post('/api', (request, response) => {
   const data = request.body;
   const timestamp = Date.now();
