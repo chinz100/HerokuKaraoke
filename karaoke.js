@@ -44,6 +44,8 @@ exports.thai2karaoke = function () {
         text = text.replace("ชินวัตร", "chinnawat");
         text = text.replace("เฉลิม", "chaloem");
         text = text.replace("ฉลอง", "chalong");
+        text = text.replace("นก", "nok");
+        text = text.replace("กบ", "kob");
         text = wordCut(text);
         var result = '';
 
@@ -325,7 +327,7 @@ function check(val) {
 
 function letter(val) {
     if (val === wordList[0]) {
-        result = 'k';
+        result = 'ka';
     } else if (val === wordList[1] || val === wordList[2] || val === wordList[3] || val === wordList[4] || val === wordList[5]) {
         result = 'kh';
     } else if (val === wordList[6]) {
