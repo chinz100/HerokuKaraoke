@@ -336,6 +336,8 @@ function check(val) {
 function letter(val) {
     if (val === wordList[0]) {
         result = 'ka';
+    }else if (val === wordList[38] ) {
+        result = 'sa';
     } else if (val === wordList[1] || val === wordList[2] || val === wordList[3] || val === wordList[4] || val === wordList[5]) {
         result = 'kh';
     } else if (val === wordList[6]) {
