@@ -42,6 +42,8 @@ exports.thai2karaoke = function () {
         text = text.replace("อา", "a");
         text = text.replace("รี", "ree");
         text = text.replace("ชินวัตร", "chinnawat");
+        text = text.replace("เฉลิม", "chaloem");
+        text = text.replace("ฉลอง", "chalong");
         text = wordCut(text);
         var result = '';
 
