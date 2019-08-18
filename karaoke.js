@@ -43,7 +43,6 @@ exports.thai2karaoke = function () {
         text = text.replace("รี", "ree");
         text = text.replace("ชินวัตร", "chinnawat");
         text = wordCut(text);
-        console.log(text)
         var result = '';
 
         for (i = 0; i < text.length;) {
@@ -215,6 +214,9 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[52] || text[i] === wordList[53]) {
                 result += 'i';
                 i = i + 1;
+            } else if (text[i] === wordList[17]) {
+                result += 't';
+                i = i + 1;
             } else if (text[i] === wordList[54] || text[i] === wordList[55]) {
                 result += 'ue';
                 i = i + 1;
@@ -283,12 +285,48 @@ exports.thai2karaoke = function () {
     }
 }
 
+function wordCut(val) {
+    var chack = [];
+    var sara = [
+        '่',//อ่
+        '้',//อ้
+        '๊',//อ๊
+        '๋',//อ๋
+    ];
+    var double = [];
+    var result = '';
+    for (i = 0; i < val.length; i++) {
+        if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
+            result += '';
+            // } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
+            //     result += '';
+            //     i = i + 1;
+        } else {
+            result += val[i];
+            double[0] = val[i];
+        }
+    }
+    return result;
+}
+
+function check(val) {
+    var result = '';
+    for (i = 0; i < val.length; i++) {
+        if (val[i] === wordList[61]) {
+            result += '';
+        } else {
+            result += val[i];
+        }
+    }
+    return result;
+}
+
 function letter(val) {
     if (val === wordList[0]) {
         result = 'k';
     } else if (val === wordList[1] || val === wordList[2] || val === wordList[3] || val === wordList[4] || val === wordList[5]) {
         result = 'kh';
-    }else if (val === wordList[6]) {
+    } else if (val === wordList[6]) {
         result = 'ng';
     } else if (val === wordList[7] || val === wordList[8] || val === wordList[9] || val === wordList[11]) {
         result = 'ch';
@@ -339,40 +377,3 @@ function letter(val) {
     }
     return result;
 }
-
-function wordCut(val) {
-    var chack = [];
-    var sara = [
-        '่',//อ่
-        '้',//อ้
-        '๊',//อ๊
-        '๋',//อ๋
-    ];
-    var double = [];
-    var result = '';
-    for (i = 0; i < val.length; i++) {
-        if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
-            result += '';
-            // } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
-            //     result += '';
-            //     i = i + 1;
-        } else {
-            result += val[i];
-            double[0] = val[i];
-        }
-    }
-    return result;
-}
-
-function check(val) {
-    var result = '';
-    for (i = 0; i < val.length; i++) {
-        if (val[i] === wordList[61]) {
-            result += '';
-        } else {
-            result += val[i];
-        }
-    }
-    return result;
-}
-
