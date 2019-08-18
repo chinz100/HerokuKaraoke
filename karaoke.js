@@ -47,6 +47,8 @@ exports.thai2karaoke = function () {
         text = text.replace("นก", "nok");
         text = text.replace("กบ", "kob");
         text = text.replace("วรรณ", "wan");
+        text = text.replace("กมล", "kamon");
+        
         text = wordCut(text);
         var result = '';
 
