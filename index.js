@@ -33,10 +33,12 @@ app.post('/api', (request, response) => {
   database.insert(data);
   response.json(data);
 });
+/*
 googleTranslate.translate('My name is Brandon', 'es', function(err, translation) {
   console.log(translation.translatedText);
   // =>  Mi nombre es Brandon
 });
+*/
 app.get('/weather/:latlon', async (request, response) => {
   console.log(request.params);
   const latlon = request.params.latlon.split(',');
