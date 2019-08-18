@@ -310,9 +310,9 @@ function wordCut(val) {
     for (i = 0; i < val.length; i++) {
         if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
             result += '';
-            // } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
-            //     result += '';
-            //     i = i + 1;
+             } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
+                 result += '';
+                i = i + 1;
         } else {
             result += val[i];
             double[0] = val[i];
