@@ -52,6 +52,8 @@ exports.thai2karaoke = function () {
         text = text.replace("เชียร", "chian");
         text = text.replace("มง", "mong");
         text = text.replace("คล", "khon");
+        text = text.replace("กฤษ", "Krit");
+        text = text.replace("ฑ", "t");
         text = wordCut(text);
         var result = '';
 
