@@ -69,10 +69,7 @@ exports.thai2karaoke = function () {
                 result += 'a';
                 i = i + 1;
             } else if (text[i] && text[i + 1] === wordList[61] || text[i] && text[i + 1] === wordList[52] && text[i + 2] === wordList[61]) {
-              
-  
-                result += '';
-                
+                result += '';    
                 i = i + 2;
             } else if (text[i] === wordList[0] && text[i + 1] === wordList[34] && text[i + 2] === wordList[34] && text[i + 3] === wordList[32]) {
                 result += letter(text[i]) + 'amma';
@@ -320,9 +317,9 @@ function wordCut(val) {
     for (i = 0; i < val.length; i++) {
         if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
             result += '';
-             } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
-                 result += '';
-                i = i + 1;
+            // } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
+             //    result += '';
+             //   i = i + 1;
         } else {
             result += val[i];
             double[0] = val[i];
