@@ -39,12 +39,14 @@ var wordList = [
 exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;
-        text = text.replace(/อา/g, "a");
-        text = text.replace(/รี/g, "ree");
-        text = text.replace(/ชินวัตร/g, "chinnawat");
-        text = text.replace(/วัตร/g, "wat");
         text = text.replace(/เฉลิม/g, "chaloem");
         text = text.replace(/ฉลอง/g, "chalong");
+        text = text.replace(/ชินวัตร/g, "chinnawat");
+        text = text.replace(/คฑา/g, "Khatha");
+        text = text.replace(/วุฒิ/g, "wut");
+        text = text.replace(/อา/g, "a");
+        text = text.replace(/รี/g, "ree");
+        text = text.replace(/วัตร/g, "wat");
         text = text.replace(/นก/g, "nok");
         text = text.replace(/กบ/g, "kob");
         text = text.replace(/วรรณ/g, "wan");
@@ -54,7 +56,9 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
-        text = text.replace(/ฑ/g, "t");
+        text = text.replace(/ฑ/g, "t");   
+
+
         text = wordCut(text);
         var result = '';
 
