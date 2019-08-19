@@ -42,6 +42,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/อา/g, "a");
         text = text.replace(/รี/g, "ree");
         text = text.replace(/ชินวัตร/g, "chinnawat");
+        text = text.replace(/วัตร/g, "wat");
         text = text.replace(/เฉลิม/g, "chaloem");
         text = text.replace(/ฉลอง/g, "chalong");
         text = text.replace(/นก/g, "nok");
@@ -62,7 +63,10 @@ exports.thai2karaoke = function () {
                 result += 'a';
                 i = i + 1;
             } else if (text[i] && text[i + 1] === wordList[61] || text[i] && text[i + 1] === wordList[52] && text[i + 2] === wordList[61]) {
+              
+  
                 result += '';
+                
                 i = i + 2;
             } else if (text[i] === wordList[0] && text[i + 1] === wordList[34] && text[i + 2] === wordList[34] && text[i + 3] === wordList[32]) {
                 result += letter(text[i]) + 'amma';
