@@ -43,9 +43,11 @@ exports.thai2karaoke = function () {
         text = text.replace(/ฉลอง/g, "chalong");
         text = text.replace(/ชินวัตร/g, "chinnawat");
         text = text.replace(/คฑา/g, "Khatha");
+        text = text.replace(/มินทร์/g, "min");
         text = text.replace(/วุฒิ/g, "wut");
         text = text.replace(/อา/g, "a");
         text = text.replace(/รี/g, "ree");
+        text = text.replace(/ประ/g, "pra");
         text = text.replace(/วัตร/g, "wat");
         text = text.replace(/นก/g, "nok");
         text = text.replace(/กบ/g, "kob");
@@ -57,7 +59,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
         text = text.replace(/ฑ/g, "t");   
-
+   
 
         text = wordCut(text);
         var result = '';
@@ -346,6 +348,8 @@ function letter(val) {
         result = 'ka';
     }else if (val === wordList[38] ) {
         result = 'sa';
+    }else if (val === wordList[31] ) {
+        result = 'P';
     } else if (val === wordList[1] || val === wordList[2] || val === wordList[3] || val === wordList[4] || val === wordList[5]) {
         result = 'kh';
     } else if (val === wordList[6]) {
