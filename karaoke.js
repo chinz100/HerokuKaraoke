@@ -42,7 +42,10 @@ exports.thai2karaoke = function () {
         text = text.replace(/เฉลิม/g, "chaloem");
         text = text.replace(/ฉลอง/g, "chalong");
         text = text.replace(/ชินวัตร/g, "chinnawat");
+        text = text.replace(/ปัญญา/g, "panya");
+        text = text.replace(/ธวัช/g, "thawat");   
         text = text.replace(/คฑา/g, "Khatha");
+        text = text.replace(/ภูมิ/g, "pum");
         text = text.replace(/มินทร์/g, "min");
         text = text.replace(/เกียรติ/g, "kiat");
         text = text.replace(/เกียร/g, "kiat"); 
@@ -61,11 +64,12 @@ exports.thai2karaoke = function () {
         text = text.replace(/อา/g, "a");
         text = text.replace(/รี/g, "ree");
         text = text.replace(/ฑ/g, "t");   
+        
+         
    
 
         text = wordCut(text);
         var result = '';
-
         for (i = 0; i < text.length;) {
             if (text[i] === wordList[42] && text[i + 3] === wordList[42]) {
                 result += 'a';
