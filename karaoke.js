@@ -44,9 +44,9 @@ exports.thai2karaoke = function () {
         text = text.replace(/ชินวัตร/g, "chinnawat");
         text = text.replace(/คฑา/g, "Khatha");
         text = text.replace(/มินทร์/g, "min");
+        text = text.replace(/เกียรติ/g, "kiat");
+        text = text.replace(/เกียร/g, "kiat"); 
         text = text.replace(/วุฒิ/g, "wut");
-        text = text.replace(/อา/g, "a");
-        text = text.replace(/รี/g, "ree");
         text = text.replace(/ประ/g, "pra");
         text = text.replace(/วัตร/g, "wat");
         text = text.replace(/นก/g, "nok");
@@ -58,6 +58,8 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
+        text = text.replace(/อา/g, "a");
+        text = text.replace(/รี/g, "ree");
         text = text.replace(/ฑ/g, "t");   
    
 
