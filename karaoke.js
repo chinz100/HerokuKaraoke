@@ -40,6 +40,7 @@ exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;
         text = text.replace(/เฉลิม/g, "chaloem");
+        text = text.replace(/บูรภา/g, "burapha");
         text = text.replace(/ฉลอง/g, "chalong");
         text = text.replace(/ชินวัตร/g, "chinnawat");
         text = text.replace(/ปัญญา/g, "panya");
@@ -49,9 +50,12 @@ exports.thai2karaoke = function () {
         text = text.replace(/มินทร์/g, "min");
         text = text.replace(/เกียรติ/g, "kiat");
         text = text.replace(/เกียร/g, "kiat"); 
+        text = text.replace(/นูญ/g, "nun"); 
+        text = text.replace(/ธรรม/g, "tham"); 
         text = text.replace(/วุฒิ/g, "wut");
         text = text.replace(/ประ/g, "pra");
         text = text.replace(/วัตร/g, "wat");
+        text = text.replace(/ขวัญ/g, "khwan");  
         text = text.replace(/นก/g, "nok");
         text = text.replace(/กบ/g, "kob");
         text = text.replace(/วรรณ/g, "wan");
@@ -64,9 +68,8 @@ exports.thai2karaoke = function () {
         text = text.replace(/อา/g, "a");
         text = text.replace(/รี/g, "ree");
         text = text.replace(/ฑ/g, "t");   
-        
-         
-   
+        text = text.replace(/ฐ/g, "d");   
+
 
         text = wordCut(text);
         var result = '';
