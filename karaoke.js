@@ -48,6 +48,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/คฑา/g, "Khatha");
         text = text.replace(/ภูมิ/g, "pum");
         text = text.replace(/มินทร์/g, "min");
+        text = text.replace(/ทรราช/g, "torarad");
         text = text.replace(/เกียรติ/g, "kiat");
         text = text.replace(/เกียร/g, "kiat"); 
         text = text.replace(/นูญ/g, "nun"); 
@@ -65,6 +66,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
+        text = text.replace(/สร/g, "sa");
         text = text.replace(/อา/g, "a");
         text = text.replace(/รี/g, "ree");
         text = text.replace(/ฑ/g, "t");   
@@ -79,6 +81,9 @@ exports.thai2karaoke = function () {
                 i = i + 1;
             } else if (text[i] && text[i + 1] === wordList[61] || text[i] && text[i + 1] === wordList[52] && text[i + 2] === wordList[61]) {
                 result += '';    
+                i = i + 2;
+            }else if (text[i] && text[i + 1] === wordList[34]) {
+                result += 'an';    
                 i = i + 2;
             } else if (text[i] === wordList[0] && text[i + 1] === wordList[34] && text[i + 2] === wordList[34] && text[i + 3] === wordList[32]) {
                 result += letter(text[i]) + 'amma';
