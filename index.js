@@ -14,4 +14,3 @@ app.use(express.json({ limit: '1mb' }));
 
 var karaoke = require('./karaoke')
 app.use('/newuser', karaoke.thai2karaoke());
-
