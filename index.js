@@ -1,6 +1,6 @@
 const express = require('express');
-const Datastore = require('nedb');
-const fetch = require('node-fetch');
+//const Datastore = require('nedb');
+//const fetch = require('node-fetch');
 //var googleTranslate = require('google-translate')(apiKey);
 require('dotenv').config();
 
@@ -10,7 +10,6 @@ app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
 app.use(express.static('public'));
-app.use(express.json({ limit: '1mb' }));
 
 var karaoke = require('./karaoke')
 app.use('/newuser', karaoke.thai2karaoke());
