@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 
 var karaoke = require('./karaoke')
