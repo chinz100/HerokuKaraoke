@@ -45,6 +45,8 @@ var wordList = [
 exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;    
+
+ 
         text = text.replace(/เอกราช/g, "AekKaRach");   
         text = text.replace(/บุษบา/g, "BudSaBa");
         text = text.replace(/อินทร์/g, "In");
@@ -52,32 +54,30 @@ exports.thai2karaoke = function () {
        text = text.replace(/ธนากร/g, "TaNaKorn");
        text = text.replace(/ไรยวงษ์/g, "RaiYaWong");
        text = text.replace(/นริศรา/g, "NaRiSara");
+       text = text.replace(/เฉลิม/g, "chaloem");
+       text = text.replace(/วรรณภูมิ/g, "wannapoon"); 
+       text = text.replace(/บูรภา/g, "burapha");
+       text = text.replace(/ฉลอง/g, "chalong");
+       text = text.replace(/ชินวัตร/g, "chinnawat");
+       text = text.replace(/ปัญญา/g, "panya");
+       text = text.replace(/เกียรติ/g, "kiat");
+       text = text.replace(/เกียร/g, "kiat"); 
         text = text.replace(/ณัฐ/g, "Nutta");
         text = text.replace(/ศุภชัย/g, "SuPaChai");
         text = text.replace(/ศรัณ/g, "SaRan");
         text = text.replace(/ยพง/g, "YaPong");
         text = text.replace(/พล/g, "Phon");
-        text = text.replace(/เฉลิม/g, "chaloem");
-        text = text.replace(/วรรณภูมิ/g, "wannapoon"); 
-        text = text.replace(/บูรภา/g, "burapha");
-        text = text.replace(/ฉลอง/g, "chalong");
-        text = text.replace(/ชินวัตร/g, "chinnawat");
-        text = text.replace(/ปัญญา/g, "panya");
         text = text.replace(/ธวัช/g, "thawat");   
         text = text.replace(/คฑา/g, "Khatha");
         text = text.replace(/ภูมิ/g, "pum");
         text = text.replace(/มินทร์/g, "min");
         text = text.replace(/ทรราช/g, "torarad");
-        text = text.replace(/เกียรติ/g, "kiat");
-        text = text.replace(/เกียร/g, "kiat"); 
         text = text.replace(/นูญ/g, "nun"); 
         text = text.replace(/ธรรม/g, "tham"); 
         text = text.replace(/วุฒิ/g, "wut");
         text = text.replace(/ประ/g, "pra");
         text = text.replace(/วัตร/g, "wat");
         text = text.replace(/ขวัญ/g, "khwan");  
-        text = text.replace(/นก/g, "nok");
-        text = text.replace(/กบ/g, "kob");
         text = text.replace(/วรรณ/g, "wan");
         text = text.replace(/กมล/g, "kamon");
         text = text.replace(/ทูร/g, "thun");
@@ -85,17 +85,16 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
-        text = text.replace(/สรร/g, "san");
-        text = text.replace(/สร/g, "sa");
-        text = text.replace(/อา/g, "a");
         text = text.replace(/ร็อก/g, "lok");
         text = text.replace(/ร็อค/g, "rock");
         text = text.replace(/ล็อค/g, "rock");
         text = text.replace(/จง/g, "jong");
        text = text.replace(/ภร/g, "Pron");
         text = text.replace(/ศรี/g, "See");
-
-
+        text = text.replace(/ภูว/g, "PuWa");   
+        text = text.replace(/ศิษฏ์/g, "Sin");  
+        text = text.replace(/กาญ/g, "Kan"); 
+        text = text.replace(/กิจ/g, "Kit");  
                        //    text = text.replace(/NaN/g, "NaN");
                          //    text = text.replace(/NaN/g, "NaN");
                            //    text = text.replace(/NaN/g, "NaN");
@@ -107,10 +106,15 @@ exports.thai2karaoke = function () {
        text = text.replace(/จักร/g, "Jak");
         text = text.replace(/ฑ/g, "t");   
         text = text.replace(/ฐ/g, "d");   
-        text = text.replace(/ก์/g, "");   
+        text = text.replace(/ก์/g, "");  
+     // last word   
+        text = text.replace(/นก/g, "nok");
+        text = text.replace(/กบ/g, "kob");
+        
+        
         text = wordCut(text);
         var result = '';
-       // console.log(text);
+     
         for (i = 0; i < text.length;) {
             if (text[i] === wordList[0]) {
                 result += 'k';
