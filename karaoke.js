@@ -80,9 +80,10 @@ exports.thai2karaoke = function () {
         text = text.replace(/จง/g, "jong");
        text = text.replace(/ภร/g, "Pron");
        
+
         text = text.replace(/ศรี/g, "See");
         text = text.replace(/อินทร์/g, "In");
-    //  text = text.replace(/จง/g, "jong");
+     text = text.replace(/ณพ/g, "Nop");
       //  text = text.replace(/จง/g, "jong");
        // text = text.replace(/กง/g, "kong");
        text = text.replace(/จักร/g, "Jak");
@@ -110,7 +111,7 @@ exports.thai2karaoke = function () {
           //      result += 'an';
               //  i = i + 2;
             } else if (text[i] === wordList[51]) {
-                result += 'am';
+                result += 'um';
                 i = i + 1
             } else if (text[i] === wordList[58] && text[i + 2] === wordList[48]) {
                 result += letter(text[i + 1]) + 'e';
@@ -308,7 +309,7 @@ exports.thai2karaoke = function () {
                 result += 'l';
                 i = i + 2;
           } else if (text[i] && text[i + 1] === wordList[34]) {
-                result += letter(text[i]) + 'an';
+                result += letter(text[i]) + 'un';
                 i = i + 3;
             } else if (text[i] === wordList[40] && text[i + 1] === wordList[34]) {
                 result += 'r';
@@ -390,13 +391,13 @@ function check(val) {
 
 function letter(val) {
     if (val === wordList[0]) {
-        result = 'ka';
+        result = 'Ka';
     }else if (val === wordList[38] ) {
-        result = 'sa';
+        result = 'Sa';
     }else if (val === wordList[31] ) {
         result = 'P';
     } else if (val === wordList[1] || val === wordList[2] || val === wordList[3] || val === wordList[4] || val === wordList[5]) {
-        result = 'kh';
+        result = 'Kh';
     } else if (val === wordList[6]) {
         result = 'ng';
     }else if (val === wordList[7] ) {
@@ -420,7 +421,7 @@ function letter(val) {
     } else if (val === wordList[26]) {
         result = 'p';
     } else if (val === wordList[27] || val === wordList[29] || val === 31) {
-        result = 'ph';
+        result = 'Ph';
     } else if (val === wordList[28] || val === wordList[30]) {
         result = 'f';
     } else if (val === wordList[32] || val === wordList[40] + wordList[32]) {
@@ -436,7 +437,7 @@ function letter(val) {
     } else if (val === wordList[36]) {
         result = 'w';
     } else if (val === wordList[42]) {
-        result = 'o';
+        result = 'O';
     } else if (val === wordList[40] || val === wordList[43]) {
         result = 'h';
     } else if (val === wordList[39] + wordList[32]) {
