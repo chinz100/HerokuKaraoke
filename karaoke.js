@@ -44,7 +44,8 @@ var wordList = [
 
 exports.thai2karaoke = function () {
     return function (req, res) {
-        var text = req.body.text;       
+        var text = req.body.text;    
+        text = text.replace(/เอกราช/g, "AekKaRach");   
         text = text.replace(/บุษบา/g, "BudSaBa");
         text = text.replace(/อินทร์/g, "In");
         text = text.replace(/มนตรี/g, "Montree");
@@ -98,7 +99,7 @@ exports.thai2karaoke = function () {
                        //    text = text.replace(/NaN/g, "NaN");
                          //    text = text.replace(/NaN/g, "NaN");
                            //    text = text.replace(/NaN/g, "NaN");
-                             //    text = text.replace(/NaN/g, "NaN");
+    text = text.replace(/เอก/g, "Aek");
                              text = text.replace(/ณพ/g, "Nop");
                              text = text.replace(/ยุ/g, "yu");
                               text = text.replace(/กำ/g, "Gum");
