@@ -8,7 +8,7 @@
 // ETH: 0xa751F70e862E3747e435430105bbE6db20C828C9
 // LTC: LNP95PsUgtzYghK5Ada7w3hHK2WwEYSSwn
 // XRP: rp7Fq2NQVRJxQJvUZ4o8ZzsTSocvgYoBbs
-const feedbackModel = require('./configdb');
+//const feedbackModel = require('./configdb');
 var wordList = [
     'ก', 'ข', 'ฃ', 'ค', 'ฅ', 'ฆ', 'ง', 'จ',//0-7
     'ฉ', 'ช', 'ซ', 'ฌ', 'ญ', 'ฎ', 'ฏ', 'ฐ',//8-15
