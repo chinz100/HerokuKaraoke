@@ -1,5 +1,5 @@
 const express = require('express');
-
+const feedbackModel = require('./configdb');
 //const Datastore = require('nedb');
 //const fetch = require('node-fetch');
 require('dotenv').config();
@@ -22,14 +22,17 @@ app.post('/api', (req, res)=>{
   console.log(req.body)
   res.send(200)
  });
-/*
 
-app.get('/qwerty', (req, res)=>{
- res.send(200)
- feedbackModel.find((err, doc)=>{
-  if(err) res.json({result: "failed"});
-  res.json({result: "success",data: doc});
+ app.get('/qwerty', (req, res)=>{
+ // res.send(200)
+ res.send("<p>ALL Feedbacks</p><ol><li *ngFor=\"let item of mDataArray\">{{item.username}} : <span style=\"color: gray\">{{item.feedback}}</span> </li>\</ol>")
+/*
+  feedbackModel.find((err, doc)=>{
+      if(err) res.json({result: "failed"});
+      
+      res.json({result: "success",data: doc});
+  });
+  */
 });
-});
-*/
+
 

@@ -45,6 +45,12 @@ var wordList = [
 exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;       
+        text = text.replace(/บุษบา/g, "BudSaBa");
+        text = text.replace(/อินทร์/g, "In");
+        text = text.replace(/มนตรี/g, "Montree");
+       text = text.replace(/ธนากร/g, "TaNaKorn");
+       text = text.replace(/ไรยวงษ์/g, "RaiYaWong");
+       text = text.replace(/นริศรา/g, "NaRiSara");
         text = text.replace(/ณัฐ/g, "Nutta");
         text = text.replace(/ศุภชัย/g, "SuPaChai");
         text = text.replace(/ศรัณ/g, "SaRan");
@@ -87,14 +93,16 @@ exports.thai2karaoke = function () {
         text = text.replace(/จง/g, "jong");
        text = text.replace(/ภร/g, "Pron");
         text = text.replace(/ศรี/g, "See");
-        text = text.replace(/อินทร์/g, "In");
-     text = text.replace(/ณพ/g, "Nop");
-      text = text.replace(/กำ/g, "Gum");
-     text = text.replace(/คง/g, "kong");
-            // text = text.replace(/กง/g, "kong");
-                 // text = text.replace(/กง/g, "kong");
-                      // text = text.replace(/กง/g, "kong");
-                           // text = text.replace(/กง/g, "kong");
+
+
+                       //    text = text.replace(/NaN/g, "NaN");
+                         //    text = text.replace(/NaN/g, "NaN");
+                           //    text = text.replace(/NaN/g, "NaN");
+                             //    text = text.replace(/NaN/g, "NaN");
+                             text = text.replace(/ณพ/g, "Nop");
+                             text = text.replace(/ยุ/g, "yu");
+                              text = text.replace(/กำ/g, "Gum");
+                             text = text.replace(/คง/g, "kong");
        text = text.replace(/จักร/g, "Jak");
         text = text.replace(/ฑ/g, "t");   
         text = text.replace(/ฐ/g, "d");   
@@ -353,6 +361,8 @@ exports.thai2karaoke = function () {
         var result = check(result);
         req.body.data = result;
         //console.log(req.body);
+
+       
       feedbackModel.create(req.body, (err,doc)=>{
 
         res.status(200).json({
