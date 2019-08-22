@@ -40,6 +40,7 @@ exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;
         text = text.replace(/เฉลิม/g, "chaloem");
+        text = text.replace(/วรรณภูมิ/g, "wannapoon"); 
         text = text.replace(/บูรภา/g, "burapha");
         text = text.replace(/ฉลอง/g, "chalong");
         text = text.replace(/ชินวัตร/g, "chinnawat");
@@ -66,9 +67,15 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
+        text = text.replace(/สรร/g, "san");
         text = text.replace(/สร/g, "sa");
         text = text.replace(/อา/g, "a");
-        text = text.replace(/รี/g, "ree");
+        text = text.replace(/ร็อก/g, "lok");
+        text = text.replace(/ร็อค/g, "rock");
+        text = text.replace(/ล็อค/g, "rock");
+        text = text.replace(/จง/g, "jong");
+       // text = text.replace(/กง/g, "kong");
+       text = text.replace(/จักร/g, "Jak");
         text = text.replace(/ฑ/g, "t");   
         text = text.replace(/ฐ/g, "d");   
 
@@ -83,15 +90,15 @@ exports.thai2karaoke = function () {
             } else if (text[i] && text[i + 1] === wordList[61] || text[i] && text[i + 1] === wordList[52] && text[i + 2] === wordList[61]) {
                 result += '';    
                 i = i + 2;
-            }else if (text[i] && text[i + 1] === wordList[34]) {
-                result += 'an';    
-                i = i + 2;
+            }else if (text[i]  === wordList[34]) {
+                result += 'r';    
+                i = i + 1;
             } else if (text[i] === wordList[0] && text[i + 1] === wordList[34] && text[i + 2] === wordList[34] && text[i + 3] === wordList[32]) {
                 result += letter(text[i]) + 'amma';
                 i = i + 4;
-            } else if (text[i] === wordList[34] && text[i + 1] === wordList[34]) {
-                result += 'an';
-                i = i + 2;
+         //   } else if (text[i] === wordList[34] && text[i + 1] === wordList[34]) {
+          //      result += 'an';
+              //  i = i + 2;
             } else if (text[i] === wordList[51]) {
                 result += 'am';
                 i = i + 1
@@ -115,7 +122,7 @@ exports.thai2karaoke = function () {
                 i = i + 2;
             } else if (text[i] === wordList[60] && text[i + 2] === wordList[34]) {
                 result += letter(text[i + 1]) + 'ora';
-                i = i + 3;
+               i = i + 3;
             } else if (text[i] === wordList[60] && text[i + 3] === wordList[48]) {
                 result += letter(text[i + 1]) + 'o';
                 i = i + 4;
@@ -245,7 +252,10 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[48] || text[i] === wordList[49] || text[i] === wordList[50]) {
                 result += 'a';
                 i = i + 1;
-            } else if (text[i] === wordList[52] || text[i] === wordList[53]) {
+            }else if (text[i] ===  wordList[53]) {
+                result += 'ee';
+                i = i + 1;
+            } else if (text[i] === wordList[52])  {
                 result += 'i';
                 i = i + 1;
             } else if (text[i] === wordList[17]) {
@@ -264,7 +274,7 @@ exports.thai2karaoke = function () {
                 //     result += letter(text[i]) + 'a';
                 //     i = i + 1;
             } else if (text[i] && text[i + 1] && text[i + 2] === wordList[18] && text[i + 3] === wordList[61]) {
-                result += letter(text[i]) + letter(text[i + 1]) + 'on';
+                result += letter(text[i]) + letter(text[i + 1]) + '';
                 i = i + 2;
             } else if (text[i] === wordList[0] && text[i + 1] === wordList[19]) {
                 result += letter(text[i]) + 'od';
@@ -287,9 +297,9 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[40] && text[i + 1] === wordList[35]) {
                 result += 'l';
                 i = i + 2;
-            } else if (text[i] && text[i + 1] === wordList[34]) {
-                result += letter(text[i]) + 'ora';
-                i = i + 2;
+          } else if (text[i] && text[i + 1] === wordList[34]) {
+                result += letter(text[i]) + 'an';
+                i = i + 3;
             } else if (text[i] === wordList[40] && text[i + 1] === wordList[34]) {
                 result += 'r';
                 i = i + 2;
@@ -379,7 +389,9 @@ function letter(val) {
         result = 'kh';
     } else if (val === wordList[6]) {
         result = 'ng';
-    } else if (val === wordList[7] || val === wordList[8] || val === wordList[9] || val === wordList[11]) {
+    }else if (val === wordList[7] ) {
+        result = 'j';
+    }  else if (val === wordList[8] || val === wordList[9] || val === wordList[11]) {
         result = 'ch';
     } else if (val === wordList[10] || val === wordList[37] || val === wordList[38] || val === wordList[39]) {
         result = 's';
