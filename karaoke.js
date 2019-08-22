@@ -74,6 +74,12 @@ exports.thai2karaoke = function () {
         text = text.replace(/ร็อค/g, "rock");
         text = text.replace(/ล็อค/g, "rock");
         text = text.replace(/จง/g, "jong");
+       text = text.replace(/ภร/g, "Pron");
+       
+        text = text.replace(/ศรี/g, "See");
+        text = text.replace(/อินทร์/g, "In");
+    //  text = text.replace(/จง/g, "jong");
+      //  text = text.replace(/จง/g, "jong");
        // text = text.replace(/กง/g, "kong");
        text = text.replace(/จักร/g, "Jak");
         text = text.replace(/ฑ/g, "t");   
