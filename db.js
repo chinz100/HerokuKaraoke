@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 mongoose.set('debug',true);
 mongoose.connect(CONNECTION_URL, {
   useMongoClient: true
-  //useNewUrlParser: true
+ // useNewUrlParser: true
 });
 mongoose.connection.on('connected', function(){
 console.log('mongoose connect open');
