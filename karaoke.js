@@ -324,7 +324,6 @@ exports.thai2karaoke = function () {
     });
         
         
-        
       
        
     }
