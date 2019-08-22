@@ -313,16 +313,15 @@ exports.thai2karaoke = function () {
        
         var result = check(result);
         req.body.result = result;
-        console.log(req.body);
-        feedbackModel.create(req.body, (err,doc)=>{
-           // if(err) res.json({result: "failed", text: 'username' , result: 'feedback'})
-        //
+     //   console.log(req.body);
+     //   feedbackModel.create(req.body, (err,doc)=>{
+
      
         res.status(200).json({
             status: true,
             text: text,
             result: result, 
-        });
+    //    });
 
     });
         
