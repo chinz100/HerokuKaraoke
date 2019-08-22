@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const CONNECTION_URL = process.env.MONGODB_URL || 'mongodb://heroku_mnr6xftg:lptdd7eir7kb4hsoj52qlphlc1@ds211708.mlab.com:11708/heroku_mnr6xftg';
 mongoose.Promise = global.Promise;
-mongoose.set('debug',true);
+//mongoose.set('debug',true);
 mongoose.connect(CONNECTION_URL, {
   //  useMongoClient: true
 useNewUrlParser: true
