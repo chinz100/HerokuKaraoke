@@ -2,7 +2,6 @@ const express = require('express');
 
 //const Datastore = require('nedb');
 //const fetch = require('node-fetch');
-//var googleTranslate = require('google-translate')(apiKey);
 require('dotenv').config();
 
 const app = express();
@@ -10,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
-require('./db');
+//require('./db');
 
 app.use(express.json({ limit: '1mb' }));
 
@@ -18,7 +17,6 @@ app.use(express.json({ limit: '1mb' }));
 var karaoke = require('./karaoke')
 
 app.use('/newuser', karaoke.thai2karaoke())
-
 app.post('/api', (req, res)=>{
  
   console.log(req.body)
