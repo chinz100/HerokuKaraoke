@@ -8,7 +8,7 @@
 // ETH: 0xa751F70e862E3747e435430105bbE6db20C828C9
 // LTC: LNP95PsUgtzYghK5Ada7w3hHK2WwEYSSwn
 // XRP: rp7Fq2NQVRJxQJvUZ4o8ZzsTSocvgYoBbs
-
+const feedbackModel = require('./configdb');
 var wordList = [
     'ก', 'ข', 'ฃ', 'ค', 'ฅ', 'ฆ', 'ง', 'จ',//0-7
     'ฉ', 'ช', 'ซ', 'ฌ', 'ญ', 'ฎ', 'ฏ', 'ฐ',//8-15
@@ -75,6 +75,7 @@ exports.thai2karaoke = function () {
 
         text = wordCut(text);
         var result = '';
+
         for (i = 0; i < text.length;) {
             if (text[i] === wordList[42] && text[i + 3] === wordList[42]) {
                 result += 'a';
@@ -309,14 +310,31 @@ exports.thai2karaoke = function () {
                 i = i + 1;
             }
         }
+       
         var result = check(result);
+        req.body.result = result;
+        console.log(req.body);
+        feedbackModel.create(req.body, (err,doc)=>{
+           // if(err) res.json({result: "failed", text: 'username' , result: 'feedback'})
+        //
+     
         res.status(200).json({
             status: true,
-            data: result,
-            length: text.length
+            text: text,
+            result: result, 
         });
+
+    });
+        
+        
+        
+      
+       
     }
+   
 }
+
+
 
 function wordCut(val) {
     var chack = [];
@@ -414,3 +432,4 @@ function letter(val) {
     }
     return result;
 }
+
