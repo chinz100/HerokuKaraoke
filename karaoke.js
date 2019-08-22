@@ -106,6 +106,7 @@ exports.thai2karaoke = function () {
        text = text.replace(/จักร/g, "Jak");
         text = text.replace(/ฑ/g, "t");   
         text = text.replace(/ฐ/g, "d");   
+        text = text.replace(/ก์/g, "");   
         text = wordCut(text);
         var result = '';
        // console.log(text);
@@ -272,9 +273,9 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[58] && text[i + 2] === wordList[53] && text[i + 3] === wordList[33] && text[i + 4] === wordList[36]) {
                 result += letter(text[i + 1]) + 'iao';
                 i = i + 5;
-            } else if (text[i] && text[i + 1] === wordList[50] && text[i + 2] === wordList[12] || text[i] && text[i + 1] === wordList[50] && text[i + 2] === wordList[34]) {
-                result += letter(text[i]) + 'an';
-                i = i + 3;
+      //      } else if (text[i] && text[i + 1] === wordList[50] && text[i + 2] === wordList[12] || text[i] && text[i + 1] === wordList[50] && text[i + 2] === wordList[34]) {
+        //        result += letter(text[i]) + 'an';
+         //       i = i + 3;
             } else if (text[i] === wordList[48] || text[i] === wordList[49] || text[i] === wordList[50]) {
                 result += 'a';
                 i = i + 1;
@@ -308,9 +309,9 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[35] && text[i + 1] === wordList[32]|| text[i] === wordList[34] && text[i + 1] === wordList[32]|| text[i] === wordList[39] && text[i + 1] === wordList[32]) {
                 result += letter(text[i]) + 'om';
                 i = i + 2;
-            } else if (text[i] === wordList[20] && text[i + 1] === wordList[24] || text[i] === wordList[3] && text[i + 1] === wordList[24] || text[i] === wordList[38] && text[i + 1] === wordList[34] || text[i] === wordList[0] && text[i + 1] === wordList[34]) {
-                result += letter(text[i]) + 'on';
-                i = i + 2;
+         //   } else if (text[i] === wordList[20] && text[i + 1] === wordList[24] || text[i] === wordList[3] && text[i + 1] === wordList[24] || text[i] === wordList[38] && text[i + 1] === wordList[34] || text[i] === wordList[0] && text[i + 1] === wordList[34]) {
+          //      result += letter(text[i]) + 'on';
+            //  i = i + 2;
             } else if (text[i] === wordList[42] && text[i + 1] === wordList[33]) {
                 result += 'y';
                 i = i + 2;
