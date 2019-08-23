@@ -110,6 +110,8 @@ exports.thai2karaoke = function () {
                          //    text = text.replace(/NaN/g, "NaN");
                            //    text = text.replace(/NaN/g, "NaN");
     text = text.replace(/เอก/g, "Aek");
+
+    text = text.replace(/ยุทธ/g, "Yuth");
                              text = text.replace(/ณพ /g, "Nop ");
                              text = text.replace(/ยุ/g, "yu");
                               text = text.replace(/กำ/g, "Gum");
