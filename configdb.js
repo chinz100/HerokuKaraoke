@@ -4,6 +4,6 @@ var FeedbackSchema = mongoose.Schema({
     data: {type: String, require: true},
 });
 
-var FeedbackModel = mongoose.model('chinzdb', FeedbackSchema);
+var FeedbackModel = mongoose.model('chinzdb23', FeedbackSchema);
 
 module.exports = FeedbackModel;
