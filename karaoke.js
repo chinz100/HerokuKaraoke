@@ -8,6 +8,7 @@
 // ETH: 0xa751F70e862E3747e435430105bbE6db20C828C9
 // LTC: LNP95PsUgtzYghK5Ada7w3hHK2WwEYSSwn
 // XRP: rp7Fq2NQVRJxQJvUZ4o8ZzsTSocvgYoBbs
+
 const feedbackModel = require('./configdb');
 var wordList = [
 //   0    1    2    3    4     5    6    7
@@ -85,6 +86,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/มง/g, "mong");
         text = text.replace(/คล/g, "khon");
         text = text.replace(/กฤษ/g, "Krit");
+        text = text.replace(/กิจ/g, "Krit"); 
         text = text.replace(/ร็อก/g, "lok");
         text = text.replace(/ร็อค/g, "rock");
         text = text.replace(/ล็อค/g, "rock");
@@ -95,6 +97,8 @@ exports.thai2karaoke = function () {
         text = text.replace(/ศิษฏ์/g, "Sin");  
         text = text.replace(/กาญ/g, "Kan"); 
         text = text.replace(/พนม/g, "PaNom"); 
+        
+        
         
                        //    text = text.replace(/NaN/g, "NaN");
                          //    text = text.replace(/NaN/g, "NaN");
