@@ -94,7 +94,8 @@ exports.thai2karaoke = function () {
         text = text.replace(/ภูว/g, "PuWa");   
         text = text.replace(/ศิษฏ์/g, "Sin");  
         text = text.replace(/กาญ/g, "Kan"); 
-        text = text.replace(/กิจ/g, "Kit");  
+        text = text.replace(/พนม/g, "PaNom"); 
+        
                        //    text = text.replace(/NaN/g, "NaN");
                          //    text = text.replace(/NaN/g, "NaN");
                            //    text = text.replace(/NaN/g, "NaN");
