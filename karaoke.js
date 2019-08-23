@@ -34,12 +34,13 @@ var wordList = [
     'ุ',//อุ   56
     'ู',//อู   57
     'เ',//เอ   58
-    '็',//อ็     59
+    '็',//อ็     59   
     'โ',//โอ   60
     '์',//อ์      61
     'แ',//แอ    62
     'ใ',//       63
     'ไ',//       64
+    '้',//   65
 ];
 
 
@@ -123,7 +124,11 @@ exports.thai2karaoke = function () {
         var result = '';
      
         for (i = 0; i < text.length;) {
-            if (text[i] === wordList[0]) {
+             if(text[i] === wordList[65] && text[i-2] === wordList[26] ){
+               // console.log(text[i-2],i)
+                result += 'o';
+               i = i + 1;
+            }else if (text[i] === wordList[0]) {
                 result += 'k';
                 i = i + 1;
             }else if (text[i] === wordList[42] && text[i + 3] === wordList[42]) {
@@ -270,6 +275,16 @@ exports.thai2karaoke = function () {
             } else if (text[i] === wordList[52] && text[i + 1] === wordList[36]) {
                 result += 'io';
                 i = i + 2;
+  /* (- ้) ,i-1 != (ต) ,i-1 != (ไ,ใ) */    }  else if ((text[i-1] == wordList[20])  && text[i] === wordList[65] &&  text[i-2] != wordList[63]) {
+               // console.log(text[i-1],i)
+                    result += 'o';
+                   i = i + 1;
+               
+            }else if ((text[i-1] != wordList[64] || text[i-1] !=  wordList[63])  && text[i] === wordList[65]  ) {
+              //  console.log(text[i-1],i)
+                    result += '';
+                   i = i + 1;
+               
             } else if (text[i] === wordList[58] && text[i + 2] === wordList[59] && text[i + 3] === wordList[36]) {
                 result += letter(text[i + 1]) + 'eo';
                 i = i + 4;
@@ -398,19 +413,19 @@ function wordCut(val) {
     var chack = [];
     var sara = [
         '่',//อ่
-        '้',//อ้
+     //   '้',//อ้
         '๊',//อ๊
         '๋',//อ๋
     ];
     var double = [];
     var result = '';
     for (i = 0; i < val.length; i++) {
-        if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
+         if (sara[0] === val[i] || sara[1] === val[i] || sara[2] === val[i] || sara[3] === val[i]) {
             result += '';
             // } else if (val[i] && sara[4] === val[i + 1]) { //check letter + -์ if have to remove
              //    result += '';
              //   i = i + 1;
-        } else {
+        }  else {
             result += val[i];
             double[0] = val[i];
         }
@@ -421,7 +436,9 @@ function wordCut(val) {
 function check(val) {
     var result = '';
     for (i = 0; i < val.length; i++) {
-        if (val[i] === wordList[61]) {
+        if (val[i] === wordList[65]) { //  ้
+            result += 'i';
+        } else if (val[i] === wordList[61]) {
             result += '';
         } else {
             result += val[i];

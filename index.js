@@ -1,7 +1,6 @@
 const express = require('express');
 const feedbackModel = require('./configdb');
-
-var _ = require('underscore');
+//var _ = require('underscore');
 //const Datastore = require('nedb');
 //const fetch = require('node-fetch');
 require('dotenv').config();
@@ -29,7 +28,7 @@ app.post('/api', (req, res)=>{
  //feedbackModel.find().sort(['updatedAt', 1]);
  var result = '';
  feedbackModel.findOne((err, doc) =>{
-   //({ field: 'asc', text: -1 });
+   //;
    result =  ({data: doc});
    res.json({result});
   
