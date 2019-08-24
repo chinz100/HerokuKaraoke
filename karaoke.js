@@ -94,6 +94,7 @@ exports.thai2karaoke = function () {
         text = text.replace(/กฤษ/g, "Krit");
         text = text.replace(/กิจ/g, "Krit"); 
         text = text.replace(/ร็อก/g, "lok");
+        text = text.replace(/วรัญ/g, "WaRun");
         text = text.replace(/ร็อค/g, "rock");
         text = text.replace(/ล็อค/g, "rock");
         text = text.replace(/จง/g, "jong");
