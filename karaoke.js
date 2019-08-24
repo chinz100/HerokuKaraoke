@@ -68,6 +68,7 @@ exports.thai2karaoke = function () {
        text = text.replace(/เกียร/g, "kiat"); 
         text = text.replace(/ณัฐ/g, "Nutta");
         text = text.replace(/ศุภชัย/g, "SuPaChai");
+        text = text.replace(/ชยาง/g, "ChaYang");
         text = text.replace(/ศรัณ/g, "SaRan");
         text = text.replace(/ยพง/g, "YaPong");
         text = text.replace(/พล/g, "Phon");
