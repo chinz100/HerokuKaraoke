@@ -48,6 +48,8 @@ exports.thai2karaoke = function () {
     return function (req, res) {
         var text = req.body.text;    
          
+        ชยางกูล
+        text = text.replace(/ชยางกูร /g, "ChaYangKul"); 
         text = text.replace(/ปลายมนัส /g, "PlaiMaNus"); 
         text = text.replace(/วุฒิพงค์ /g, "WuttiPong"); 
         text = text.replace(/ธีรพงค์/g, "TheeRaPong");   
