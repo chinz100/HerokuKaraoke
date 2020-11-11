@@ -1,5 +1,5 @@
 const stringchange = require('./replace.js');
-const feedbackModel = require('./configdb');
+// const feedbackModel = require('./configdb');
 var wordList = [
 //   0    1    2    3    4     5    6    7
     'ก', 'ข', 'ฃ', 'ค', 'ฅ', 'ฆ', 'ง', 'จ',//0-7
@@ -309,14 +309,14 @@ exports.thai2karaoke = function () {
         //console.log(req.body);
 
        
-      feedbackModel.create(req.body, (err,doc)=>{
+    //   feedbackModel.create(req.body, (err,doc)=>{
 
         res.status(200).json({
            status: true,
             text: text,
             data: result, 
        });
-    });
+    // });
         
         
       
